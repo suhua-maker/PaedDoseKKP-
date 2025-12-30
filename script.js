@@ -19,7 +19,7 @@ function calculateDoses() {
 // Function to create table rows for all medications
 function createTableRows(weight, age) {
     var rows = '';
-    rows += getParacetamolRow(weight);
+    rows += getParacetamolSuspensionRow(weight);
     rows += getSuppositoryRow(weight);
     rows += getPromethazineRow(weight, age);
     rows += getPrednisoloneRow(weight);
@@ -45,7 +45,7 @@ function createTableRows(weight, age) {
 
 
 // Specific calculation functions for each medication
-function getParacetamolRow(weight) {
+function getParacetamolSuspensionRow(weight) {
     // Paracetamol calculation logic
     var doseMg = Math.min(15 * weight, 1000);
     var doseMl = (doseMg / 250) * 5;
@@ -251,4 +251,5 @@ function createRow(name, doseMl, doseMg, frequency, strength, doseRange, additio
             <td>${additionalInfo}</td>
         </tr>`;
 }
+
 
